@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  oracle:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: paydayloan-oracle
+    environment:
+      ORACLE_PASSWORD: oracle
+      ORACLE_CHARACTERSET: AL32UTF8
+    ports:
+      - "1521:1521"
+      - "5500:5500"  # Oracle Enterprise Manager Express
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+      - ./oracle_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    healthcheck:
+      test: ["CMD", "sqlplus", "-L", "sys/oracle@localhost:1521/XE", "as", "sysdba", "@?/rdbms/admin/sqlplus.sql"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    networks:
+      - paydayloan-network
+
+volumes:
+  oracle_data:
+
+networks:
+  paydayloan-network:
+    driver: bridge
+
