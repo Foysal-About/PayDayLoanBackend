@@ -44,12 +44,15 @@ public class RepaymentTxn {
     @Column(name = "CREDIT_ACCOUNT_NO")
     private String creditAccountNo;
 
+    @Builder.Default
     @Column(name = "PRINCIPAL_PAID", precision = 18, scale = 2)
     private BigDecimal principalPaid = BigDecimal.ZERO;
 
+    @Builder.Default
     @Column(name = "CHARGE_PAID", precision = 18, scale = 2)
     private BigDecimal chargePaid = BigDecimal.ZERO;
 
+    @Builder.Default
     @Column(name = "PENALTY_PAID", precision = 18, scale = 2)
     private BigDecimal penaltyPaid = BigDecimal.ZERO;
 
@@ -59,6 +62,7 @@ public class RepaymentTxn {
     @Column(name = "CBS_TXN_REF_NO")
     private String cbsTxnRefNo;
 
+    @Builder.Default
     @Column(name = "TXN_STATUS")
     private String txnStatus = "SUCCESS";
 

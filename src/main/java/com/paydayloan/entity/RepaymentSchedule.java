@@ -42,12 +42,14 @@ public class RepaymentSchedule {
     @Column(name = "TOTAL_DUE", nullable = false, precision = 18, scale = 2)
     private BigDecimal totalDue;
 
+    @Builder.Default
     @Column(name = "PAID_AMOUNT", precision = 18, scale = 2)
     private BigDecimal paidAmount = BigDecimal.ZERO;
 
     @Column(name = "OUTSTANDING_DUE", nullable = false, precision = 18, scale = 2)
     private BigDecimal outstandingDue;
 
+    @Builder.Default
     @Column(name = "SCHEDULE_STATUS")
     private String scheduleStatus = "PENDING";
 

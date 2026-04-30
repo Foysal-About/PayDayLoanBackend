@@ -22,6 +22,7 @@ public class LoanCharge {
     private Long chargeId;
 
     @ManyToOne(fetch = FetchType.LAZY)
+
     @JoinColumn(name = "LOAN_ID", nullable = false)
     private LoanAccount loanAccount;
 
@@ -31,12 +32,15 @@ public class LoanCharge {
     @Column(name = "CHARGE_AMOUNT", nullable = false, precision = 18, scale = 2)
     private BigDecimal chargeAmount;
 
+    @Builder.Default
     @Column(name = "WAIVED_AMOUNT", precision = 18, scale = 2)
     private BigDecimal waivedAmount = BigDecimal.ZERO;
 
+    @Builder.Default
     @Column(name = "COLLECTED_AMOUNT", precision = 18, scale = 2)
     private BigDecimal collectedAmount = BigDecimal.ZERO;
 
+    @Builder.Default
     @Column(name = "CHARGE_STATUS")
     private String chargeStatus = "PENDING";
 

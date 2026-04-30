@@ -53,6 +53,7 @@ public class DisbursementTxn {
     @Column(name = "CBS_TXN_REF_NO")
     private String cbsTxnRefNo;
 
+    @Builder.Default
     @Column(name = "TXN_STATUS")
     private String txnStatus = "SUCCESS";
 

@@ -41,6 +41,7 @@ public class LoanRequest {
     @Column(name = "CUSTOMER_ID", nullable = false)
     private Long customerId;
 
+    @Builder.Default
     @Column(name = "REQUEST_CHANNEL")
     private String requestChannel = "MOBILE_APP";
 
@@ -71,18 +72,22 @@ public class LoanRequest {
     @Column(name = "REPAYMENT_DATE", nullable = false)
     private LocalDate repaymentDate;
 
+    @Builder.Default
     @Column(name = "REPAYMENT_SOURCE")
     private String repaymentSource = "SALARY_ACCOUNT";
 
+    @Builder.Default
     @Column(name = "REQUEST_STATUS")
     private String requestStatus = "PENDING_CORP_APPROVAL";
 
     @Column(name = "STATUS_REMARKS")
     private String statusRemarks;
 
+    @Builder.Default
     @Column(name = "OTP_VERIFIED_YN")
     private Integer otpVerifiedYn = 0;
 
+    @Builder.Default
     @Column(name = "TXN_PIN_VERIFIED_YN")
     private Integer txnPinVerifiedYn = 0;
 

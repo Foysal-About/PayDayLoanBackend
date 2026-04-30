@@ -35,6 +35,7 @@ public class Corporate {
     @Column(name = "CUSTOMER_ID")
     private Long customerId;
 
+    @Builder.Default
     @Column(name = "AGREEMENT_STATUS")
     private String agreementStatus = "PENDING";
 
@@ -47,27 +48,35 @@ public class Corporate {
     @Column(name = "EFFECTIVE_TO")
     private LocalDate effectiveTo;
 
+    @Builder.Default
     @Column(name = "GUARANTEE_MODE")
     private String guaranteeMode = "CORPORATE_GUARANTEE";
 
+    @Builder.Default
     @Column(name = "MAX_ELIGIBLE_PERCENT", precision = 5, scale = 2)
     private BigDecimal maxEligiblePercent = BigDecimal.valueOf(80);
 
+    @Builder.Default
     @Column(name = "SERVICE_CHARGE_PERCENT", precision = 5, scale = 2)
     private BigDecimal serviceChargePercent = BigDecimal.valueOf(2);
 
+    @Builder.Default
     @Column(name = "MIN_SERVICE_CHARGE", precision = 18, scale = 2)
     private BigDecimal minServiceCharge = BigDecimal.valueOf(200);
 
+    @Builder.Default
     @Column(name = "MAX_ACTIVE_LOAN_PER_EMP")
     private Integer maxActiveLoanPerEmp = 1;
 
+    @Builder.Default
     @Column(name = "REPAYMENT_MODE")
     private String repaymentMode = "SALARY_DEDUCTION";
 
+    @Builder.Default
     @Column(name = "AUTO_DISBURSE_YN")
     private Integer autoDisbursYn = 1;
 
+    @Builder.Default
     @Column(name = "STATUS")
     private String status = "ACTIVE";
 

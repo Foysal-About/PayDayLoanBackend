@@ -56,6 +56,7 @@ public class Employee {
     @Column(name = "JOIN_DATE")
     private LocalDate joinDate;
 
+    @Builder.Default
     @Column(name = "EMPLOYMENT_STATUS")
     private String employmentStatus = "ACTIVE";
 
@@ -65,9 +66,11 @@ public class Employee {
     @Column(name = "REPAYMENT_ACCOUNT_NO")
     private String repaymentAccountNo;
 
+    @Builder.Default
     @Column(name = "ELIGIBILITY_YN")
     private Integer eligibilityYn = 1;
 
+    @Builder.Default
     @Column(name = "STATUS")
     private String status = "ACTIVE";
 

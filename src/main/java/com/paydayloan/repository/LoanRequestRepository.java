@@ -9,4 +9,7 @@ import java.util.List;
 @Repository
 public interface LoanRequestRepository extends JpaRepository<LoanRequest, Long> {
     List<LoanRequest> findByCorporateCorporateIdAndRequestStatus(Long corporateId, String requestStatus);
+    List<LoanRequest> findByRequestStatus(String requestStatus);
+    List<LoanRequest> findByEmployeeEmployeeId(Long employeeId);
+    List<LoanRequest> findByCorporateCorporateId(Long corporateId);
 }

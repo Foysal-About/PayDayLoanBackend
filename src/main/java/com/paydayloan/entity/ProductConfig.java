@@ -28,33 +28,42 @@ public class ProductConfig {
     @Column(name = "PRODUCT_NAME", nullable = false)
     private String productName;
 
+    @Builder.Default
     @Column(name = "MAX_ELIGIBLE_PERCENT", precision = 5, scale = 2)
     private BigDecimal maxEligiblePercent = BigDecimal.valueOf(80);
 
+    @Builder.Default
     @Column(name = "SERVICE_CHARGE_PERCENT", precision = 5, scale = 2)
     private BigDecimal serviceChargePercent = BigDecimal.valueOf(2);
 
+    @Builder.Default
     @Column(name = "MIN_SERVICE_CHARGE", precision = 18, scale = 2)
     private BigDecimal minServiceCharge = BigDecimal.valueOf(200);
 
+    @Builder.Default
     @Column(name = "MAX_ACTIVE_LOAN_PER_EMP")
     private Integer maxActiveLoanPerEmp = 1;
 
+    @Builder.Default
     @Column(name = "MIN_REQUEST_AMOUNT", precision = 18, scale = 2)
     private BigDecimal minRequestAmount = BigDecimal.valueOf(500);
 
     @Column(name = "MAX_REQUEST_AMOUNT", precision = 18, scale = 2)
     private BigDecimal maxRequestAmount;
 
+    @Builder.Default
     @Column(name = "REPAYMENT_DUE_DAYS")
     private Integer repaymentDueDays = 30;
 
+    @Builder.Default
     @Column(name = "EMPLOYER_APPROVAL_REQUIRED_YN")
     private Integer employerApprovalRequiredYn = 1;
 
+    @Builder.Default
     @Column(name = "AUTO_DISBURSE_YN")
     private Integer autoDisbursYn = 1;
 
+    @Builder.Default
     @Column(name = "STATUS")
     private String status = "ACTIVE";
 

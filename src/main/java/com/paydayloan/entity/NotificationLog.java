@@ -46,6 +46,7 @@ public class NotificationLog {
     @Column(name = "MESSAGE_BODY")
     private String messageBody;
 
+    @Builder.Default
     @Column(name = "DELIVERY_STATUS")
     private String deliveryStatus = "PENDING";
 

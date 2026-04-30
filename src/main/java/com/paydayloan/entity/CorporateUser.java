@@ -39,6 +39,7 @@ public class CorporateUser {
     @Column(name = "ROLE_CODE", nullable = false)
     private String roleCode;
 
+    @Builder.Default
     @Column(name = "STATUS")
     private String status = "ACTIVE";
 

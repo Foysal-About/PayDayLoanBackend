@@ -39,12 +39,14 @@ public class EmployeeLimit {
     @Column(name = "MAX_ELIGIBLE_AMOUNT", nullable = false, precision = 18, scale = 2)
     private BigDecimal maxEligibleAmount;
 
+    @Builder.Default
     @Column(name = "UTILIZED_AMOUNT", precision = 18, scale = 2)
     private BigDecimal utilizedAmount = BigDecimal.ZERO;
 
     @Column(name = "AVAILABLE_AMOUNT", nullable = false, precision = 18, scale = 2)
     private BigDecimal availableAmount;
 
+    @Builder.Default
     @Column(name = "ACTIVE_LOAN_COUNT")
     private Integer activeLoanCount = 0;
 

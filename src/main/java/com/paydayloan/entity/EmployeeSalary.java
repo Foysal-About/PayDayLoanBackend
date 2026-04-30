@@ -33,6 +33,7 @@ public class EmployeeSalary {
     @Column(name = "MONTHLY_SALARY", nullable = false, precision = 18, scale = 2)
     private BigDecimal monthlySalary;
 
+    @Builder.Default
     @Column(name = "ELIGIBLE_PERCENT", precision = 5, scale = 2)
     private BigDecimal eligiblePercent = BigDecimal.valueOf(80);
 
@@ -45,9 +46,11 @@ public class EmployeeSalary {
     @Column(name = "EFFECTIVE_TO")
     private LocalDate effectiveTo;
 
+    @Builder.Default
     @Column(name = "IS_CURRENT_YN")
     private Integer isCurrentYn = 1;
 
+    @Builder.Default
     @Column(name = "APPROVAL_STATUS")
     private String approvalStatus = "APPROVED";
 

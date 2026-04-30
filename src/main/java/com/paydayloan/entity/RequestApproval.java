@@ -36,6 +36,7 @@ public class RequestApproval {
     @Column(name = "APPROVER_NAME")
     private String approverName;
 
+    @Builder.Default
     @Column(name = "APPROVAL_STATUS")
     private String approvalStatus = "PENDING";
 

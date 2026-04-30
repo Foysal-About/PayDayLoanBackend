@@ -71,6 +71,7 @@ public class LoanAccount {
     @Column(name = "MATURITY_DATE", nullable = false)
     private LocalDate maturityDate;
 
+    @Builder.Default
     @Column(name = "LOAN_STATUS")
     private String loanStatus = "ACTIVE";
 
